@@ -41,7 +41,7 @@ public class Base {
 	public WebElement elmenet;
 	//1
 	public String getAttribute(WebElement element,String value){
-	String data=element.getAttribute("value");
+	String data=element.getAttribute(value);
 	return data;
 	} 
 
@@ -70,10 +70,10 @@ public String getpageSource1(WebDriver driver){
 	return id;
 }//7
 
-public void selectoptionByvalue(WebElement element){
-Select select=new Select(element);
-String value = null;
-select.selectByValue(value);
+public void selectoptionByvalue(WebElement ele,String eml){
+     Select select=new Select(ele);
+     String value = null;
+     select.selectByValue(value);
 
 
 }//8
@@ -85,7 +85,7 @@ public int getText(WebElement element,int text){
 
 public void selectoptionByvisibleText(WebElement element,String value){
 Select select=new Select(element);
-select.selectByVisibleText("value");
+select.selectByVisibleText(value);
 }//10
 
 public void selectoptionByIndex(WebElement element,int num){
@@ -158,9 +158,9 @@ public void userpassword1() {
 	
 }//23
 
-public void userpassword(String string) {
+public void userpassword(String value) {
 	WebElement textpassword  = driver.findElement(By.id("pass"));
-		textpassword.sendKeys("value");
+		textpassword.sendKeys(value);
 }//24
 
 public void userlogin() {
